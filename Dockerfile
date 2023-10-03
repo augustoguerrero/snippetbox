@@ -12,7 +12,7 @@ RUN go mod download
 COPY * ./
 
 # Build
-RUN CGO_ENABLED=0 GOOS=linux go build /app/cmd/web -o /snippetbox
+RUN CGO_ENABLED=0 GOOS=linux go build ./cmd/web -o /snippetbox
 
 EXPOSE 4000
 
