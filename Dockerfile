@@ -1,7 +1,7 @@
 FROM golang:1.21
 
 # Set destination for COPY
-WORKDIR /app
+WORKDIR /
 
 # Download Go modules
 COPY go.mod go.sum ./
@@ -10,7 +10,7 @@ RUN go mod download
 COPY . .
 
 # Build
-RUN CGO_ENABLED=0 GOOS=linux go build /app/cmd/web -o /snippetbox
+RUN CGO_ENABLED=0 GOOS=linux go build ./cmd/web -o /snippetbox
 
 EXPOSE 4000
 
