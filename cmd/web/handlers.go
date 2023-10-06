@@ -12,12 +12,6 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-// Define a snippetCreateForm struct to represent the form data and validation
-// errors for the form fields. Note that all the struct fields are deliberately
-// exported (i.e. start with a capital letter). This is because struct fields
-// must be exported in order to be read by the html/template package when
-// rendering the template.
-
 type snippetCreateForm struct {
 	Title       string
 	Content     string
