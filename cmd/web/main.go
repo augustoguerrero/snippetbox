@@ -27,8 +27,7 @@ type application struct {
 
 func main() {
 	addr := flag.String("addr", ":4000", "HTTP network address")
-	dsn := flag.String("dsn", "web:Jdilla2006@tcp(192.168.0.15:3306)/snippetbox?parseTime=true", "MySQL data source name")
-	flag.Parse()
+	dsn := flag.String("dsn", "web:Jdilla2006@tcp(192.168.0.15:3306)/snippetbox?parseTime=true", "snippetbox mysql ds
 	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
 
 	db, err := openDB(*dsn)
