@@ -45,7 +45,6 @@ func main() {
 	}
 
 	formDecoder := form.NewDecoder()
-
 	sessionManager := scs.New()
 	sessionManager.Store = mysqlstore.New(db)
 	sessionManager.Lifetime = 12 * time.Hour
