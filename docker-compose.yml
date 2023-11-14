@@ -39,5 +39,5 @@ services:
       - snippetbox
 
 networks:
-  my-network:
+  snippetbox:
     driver: bridge
