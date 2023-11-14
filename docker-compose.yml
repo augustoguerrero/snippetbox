@@ -18,7 +18,7 @@ services:
     volumes:
       - "mysql-data:/var/lib/mysql"
     networks:
-      - snippetbox-internal
+      - snippetbox
 
   app:
     build:
@@ -36,7 +36,7 @@ services:
     depends_on:
       - db
     networks:
-      - snippetbox-internal
+      - snippetbox
 
 networks:
   my-network:
