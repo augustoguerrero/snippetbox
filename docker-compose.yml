@@ -1,0 +1,43 @@
+version: "3.9"
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysql
+    restart: always
+    environment:
+      HOST: 192.168.0.15
+      MYSQL_DATABASE: "snippetbox"
+      MYSQL_USER: "web"
+      MYSQL_PASSWORD: "Jdilla2006"
+      MYSQL_ROOT_PASSWORD: "Jdilla2006"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - "mysql-data:/var/lib/mysql"
+    networks:
+      - snippetbox-internal
+
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: dev
+    environment:
+      HOST: 192.168.0.15
+    ports:
+      - "4000:4000"
+    expose:
+      - "4000"
+    volumes:
+      - ./:/app/
+    depends_on:
+      - db
+    networks:
+      - snippetbox-internal
+
+networks:
+  my-network:
+    driver: bridge
