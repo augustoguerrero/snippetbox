@@ -1,6 +1,7 @@
 version: "3.9"
 services:
   db:
+    platform: "linux/arm64"
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     container_name: mysql
@@ -21,6 +22,7 @@ services:
       - snippetbox
 
   app:
+    platform: "linux/arm64"
     build:
       dockerfile: Dockerfile
       context: .
