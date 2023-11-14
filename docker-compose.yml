@@ -17,7 +17,7 @@ services:
     expose:
       - "3306"
     volumes:
-      - mysql_mysql-data:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
     networks:
       - snippetbox
 
@@ -44,4 +44,4 @@ networks:
     driver: bridge
 
 volumes:
-  mysql_mysql-data:
+  mysql-data:
