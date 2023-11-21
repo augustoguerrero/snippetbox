@@ -10,6 +10,13 @@ import (
 	"strconv"
 )
 
+type userSignupForm struct {
+	Name                string `form:"name"`
+	Email               string `form:"email"`
+	Password            string `form:"password"`
+	validator.Validator `form:"-"`
+}
+
 type snippetCreateForm struct {
 	Title               string `form:"title"`
 	Content             string `form:"content"`
@@ -125,7 +132,6 @@ func (app *application) userSignup(w http.ResponseWriter, r *http.Request) {
 
 func (app *application) userSignupPost(w http.ResponseWriter, r *http.Request) {
 	var form userSignupForm
-
 	err := app.decodePostForm(r, &form)
 	if err != nil {
 		app.clientError(w, http.StatusBadRequest)
