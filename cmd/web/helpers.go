@@ -35,17 +35,13 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, status in
 		app.serverError(w, r, err)
 		return
 	}
-
 	buf := new(bytes.Buffer)
-
 	err := ts.ExecuteTemplate(buf, "base", data)
 	if err != nil {
 		app.serverError(w, r, err)
 		return
 	}
-
 	w.WriteHeader(status)
-
 	buf.WriteTo(w)
 }
 
@@ -62,15 +58,12 @@ func (app *application) decodePostForm(r *http.Request, dst any) error {
 	if err != nil {
 		return err
 	}
-
 	err = app.formDecoder.Decode(dst, r.PostForm)
 	if err != nil {
 		var invalidDecoderError *form.InvalidDecoderError
-
 		if errors.As(err, &invalidDecoderError) {
 			panic(err)
 		}
-
 		return err
 	}
 	return nil
