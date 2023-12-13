@@ -3,8 +3,9 @@ package main
 import (
 	"html/template"
 	"path/filepath"
-	"snippetbox/internal/models"
 	"time"
+
+	"snippetbox/internal/models"
 )
 
 type templateData struct {
@@ -14,6 +15,7 @@ type templateData struct {
 	Form            any
 	Flash           string
 	IsAuthenticated bool
+	CSRFToken       string
 }
 
 func humanDate(t time.Time) string {

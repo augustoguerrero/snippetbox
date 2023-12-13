@@ -3,11 +3,12 @@ package main
 import (
 	"errors"
 	"fmt"
-	"github.com/julienschmidt/httprouter"
 	"net/http"
+	"strconv"
+
+	"github.com/julienschmidt/httprouter"
 	"snippetbox/internal/models"
 	"snippetbox/internal/validator"
-	"strconv"
 )
 
 type userSignupForm struct {

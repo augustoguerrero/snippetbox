@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="RemoteTargetsManager">
-    <option name="projectDefaultTargetUuid" value="741e3ed7-6f93-4399-890a-02d9032c65f9" />
+    <option name="projectDefaultTargetUuid" value="607a537d-5db9-482e-a9fe-8d75a7f858a9" />
     <targets>
       <target name="Docker" type="docker" uuid="741e3ed7-6f93-4399-890a-02d9032c65f9">
         <config>
@@ -34,6 +34,18 @@
                 </option>
               </VolumeState>
             </option>
+          </config>
+        </ContributedStateBase>
+      </target>
+      <target name="WSL - Ubuntu" type="wsl" uuid="607a537d-5db9-482e-a9fe-8d75a7f858a9">
+        <config>
+          <option name="distributionMsId" value="Ubuntu" />
+          <option name="projectRootOnTarget" value="{exitCode=0, timeout=false, cancelled=false, stdout=/mnt/c/Program Files/JetBrains/GoLand 2023.2.2/jbr/bin&#10;, stderr=}/snippetbox" />
+        </config>
+        <ContributedStateBase type="GoLanguageRuntime">
+          <config>
+            <option name="goPath" value="/home/aug/go" />
+            <option name="goRoot" value="/usr/local/go/bin" />
           </config>
         </ContributedStateBase>
       </target>
