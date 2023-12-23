@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="web@rpi4" uuid="c139b5d6-10de-440b-976b-2477873bf3f5">
+    <data-source source="LOCAL" name="root@192.168.1.177" uuid="b6373076-8562-4bc4-bc1f-e8bb4c28a6b3">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://192.168.0.15:3306/snippetbox</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="root@192.168.0.15" uuid="b6373076-8562-4bc4-bc1f-e8bb4c28a6b3">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://192.168.0.15:3306/snippetbox</jdbc-url>
+      <jdbc-url>jdbc:mysql://192.168.1.177:3306/snippetbox</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

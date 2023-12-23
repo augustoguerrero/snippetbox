@@ -5,7 +5,7 @@ services:
     image: mysql
     restart: always
     environment:
-      HOST: 192.168.0.15
+      HOST: 192.168.1.177
       MYSQL_DATABASE: "snippetbox"
       MYSQL_ROOT_PASSWORD: "Jdilla2006"
       TZ: America/Buenos_Aires
@@ -25,6 +25,7 @@ services:
       context: .
     restart: always
     environment:
+      HOST: 192.168.1.177
       TZ: America/Buenos_Aires
     ports:
       - "4000:4000"
