@@ -1,9 +1,24 @@
 version: "3.9"
 services:
+  nginx:
+    platform: "linux/arm64"
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+      - "5000:5000"
+
   db:
     platform: "linux/arm64"
     image: mysql
     restart: always
+    build:
+      context: .
+      dockerfile: docker/db/Dockerfile
     environment:
       HOST: 192.168.1.177
       MYSQL_DATABASE: "snippetbox"
@@ -21,7 +36,7 @@ services:
   app:
     platform: "linux/arm64"
     build:
-      dockerfile: Dockerfile
+      dockerfile: docker/app/Dockerfile
       context: .
     restart: always
     environment:
