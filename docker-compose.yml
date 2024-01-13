@@ -11,7 +11,10 @@ services:
       - "80:80"
       - "443:443"
       - "5000:5000"
-
+    networks:
+      main:
+        aliases:
+          - nginx
   db:
     platform: "linux/arm64"
     image: mysql
@@ -31,7 +34,9 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
-      - snippetbox
+      main:
+        aliases:
+          - mysql-db
 
   app:
     platform: "linux/arm64"
@@ -51,11 +56,11 @@ services:
     depends_on:
       - db
     networks:
-      - snippetbox
-
+      main:
+        aliases:
+          - app
 networks:
-  snippetbox:
-    driver: bridge
+  main:
 
 volumes:
   mysql-data:
