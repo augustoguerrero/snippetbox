@@ -5,7 +5,7 @@ services:
     container_name: nginx
     build:
       context: .
-      dockerfile: docker/Dockerfile
+      dockerfile: docker/nginx/Dockerfile
     restart: always
     ports:
       - "80:80"
@@ -17,7 +17,6 @@ services:
           - nginx
   db:
     platform: "linux/arm64"
-    image: mysql
     restart: always
     build:
       context: .
@@ -49,8 +48,6 @@ services:
       TZ: America/Buenos_Aires
     ports:
       - "4000:4000"
-    expose:
-      - "4000"
     volumes:
       - ./:/app/
     depends_on:
