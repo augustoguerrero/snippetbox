@@ -17,12 +17,10 @@ services:
 
   db:
     platform: "linux/arm64"
+    image: mysql
     restart: always
-    build:
-      context: .
-      dockerfile: docker/db/Dockerfile
     environment:
-      HOST: 192.168.1.177
+      HOST: ${HOST}
       MYSQL_DATABASE: "snippetbox"
       MYSQL_ROOT_PASSWORD: "Jdilla2006"
       TZ: America/Buenos_Aires
@@ -44,7 +42,7 @@ services:
       context: .
     restart: always
     environment:
-      HOST: 192.168.1.177
+      HOST: ${HOST}
       TZ: America/Buenos_Aires
     ports:
       - "4000:4000"
