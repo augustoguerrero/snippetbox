@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   nginx:
-    platform: "linux/amd64"
+    platform: "linux/${ARCH}"
     container_name: nginx
     build:
       context: .
@@ -16,7 +16,8 @@ services:
           - nginx
 
   db:
-    platform: "linux/amd64"
+    platform: "linux/${ARCH}"
+    container_name: mysql
     image: mysql
     restart: always
     environment:
@@ -36,7 +37,8 @@ services:
           - mysql-db
 
   app:
-    platform: "linux/amd64"
+    platform: "linux/${ARCH}"
+    container_name: snippetbox
     build:
       dockerfile: docker/app/Dockerfile
       context: .
