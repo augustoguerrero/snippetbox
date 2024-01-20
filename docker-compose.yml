@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   nginx:
-    platform: "linux/arm64"
+    platform: "linux/amd64"
     container_name: nginx
     build:
       context: .
@@ -16,7 +16,7 @@ services:
           - nginx
 
   db:
-    platform: "linux/arm64"
+    platform: "linux/amd64"
     image: mysql
     restart: always
     environment:
@@ -36,7 +36,7 @@ services:
           - mysql-db
 
   app:
-    platform: "linux/arm64"
+    platform: "linux/amd64"
     build:
       dockerfile: docker/app/Dockerfile
       context: .
