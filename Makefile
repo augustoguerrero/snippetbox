@@ -1,6 +1,3 @@
-# Pull the latest code
-git_pull:
-	git pull
 # Stop docker containers
 docker_down:
 	docker-compose down
