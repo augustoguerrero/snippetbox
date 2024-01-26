@@ -7,6 +7,9 @@ services:
       context: .
       dockerfile: docker/nginx/Dockerfile
     restart: always
+    environment:
+        HOST: localhost
+        TZ: America/Buenos_Aires
     ports:
       - "80:80"
       - "443:443"
@@ -21,7 +24,7 @@ services:
     image: mysql
     restart: always
     environment:
-      HOST: 146.190.53.167
+      HOST: localhost
       MYSQL_DATABASE: "snippetbox"
       MYSQL_ROOT_PASSWORD: "Jdilla2006"
       TZ: America/Buenos_Aires
@@ -44,7 +47,7 @@ services:
       context: .
     restart: always
     environment:
-      HOST: 146.190.53.167
+      HOST: localhost
       TZ: America/Buenos_Aires
     ports:
       - "4000:4000"
