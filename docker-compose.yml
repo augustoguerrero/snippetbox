@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   nginx:
-    platform: "linux/x86_64"
+    platform: ${PLATFORM}
     container_name: nginx
     build:
       context: .
@@ -19,12 +19,12 @@ services:
           - nginx
 
   db:
-    platform: "linux/x86_64"
+    platform: ${PLATFORM}
     container_name: mysql
     image: mysql
     restart: always
     environment:
-      HOST: localhost
+      HOST: ${HOST}
       MYSQL_DATABASE: "snippetbox"
       MYSQL_ROOT_PASSWORD: "Jdilla2006"
       TZ: America/Buenos_Aires
@@ -40,14 +40,14 @@ services:
           - mysql-db
 
   app:
-    platform: "linux/x86_64"
+    platform: ${PLATFORM}
     container_name: snippetbox
     build:
       dockerfile: docker/app/Dockerfile
       context: .
     restart: always
     environment:
-      HOST: localhost
+      HOST: ${HOST}
       TZ: America/Buenos_Aires
     ports:
       - "4000:4000"
