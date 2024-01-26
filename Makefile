@@ -3,7 +3,7 @@ git_pull:
 
 set_env:
 	export PLATFORM=$(uname -m)
-	export HOST=$(uname -n)
+	export HOST=$(hostname)
 
 compile:
 	CGO_ENABLED=0 GOOS=linux go build -o bin/snippetbox ./cmd/web
