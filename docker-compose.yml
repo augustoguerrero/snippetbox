@@ -8,7 +8,7 @@ services:
       dockerfile: docker/nginx/Dockerfile
     restart: always
     environment:
-        HOST: localhost
+        HOST: ${HOST}
         TZ: America/Buenos_Aires
     ports:
       - "80:80"
