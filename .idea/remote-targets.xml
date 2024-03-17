@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="RemoteTargetsManager">
-    <option name="projectDefaultTargetUuid" value="607a537d-5db9-482e-a9fe-8d75a7f858a9" />
+    <option name="projectDefaultTargetUuid" value="81f05be7-b25f-4c16-a3b4-b7b693f36293" />
     <targets>
       <target name="Docker" type="docker" uuid="741e3ed7-6f93-4399-890a-02d9032c65f9">
         <config>
@@ -46,6 +46,18 @@
           <config>
             <option name="goPath" value="/home/aug/go" />
             <option name="goRoot" value="/usr/local/go/bin" />
+          </config>
+        </ContributedStateBase>
+      </target>
+      <target name="aug@192.168.1.221:22" type="ssh/sftp" uuid="81f05be7-b25f-4c16-a3b4-b7b693f36293">
+        <config>
+          <option name="projectRootOnTarget" value="/home/aug/run" />
+          <option name="serverName" value="aug@192.168.1.221:22 key" />
+          <option name="useRsync" value="true" />
+        </config>
+        <ContributedStateBase type="GoLanguageRuntime">
+          <config>
+            <option name="goRoot" value="/usr/local/go/bin/go" />
           </config>
         </ContributedStateBase>
       </target>

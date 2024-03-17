@@ -39,26 +39,26 @@ services:
         aliases:
           - mysql-db
 
-  app:
-    platform: ${PLATFORM}
-    container_name: snippetbox
-    build:
-      dockerfile: docker/app/Dockerfile
-      context: .
-    restart: always
-    environment:
-      HOST: ${HOST}
-      TZ: America/Buenos_Aires
-    ports:
-      - "4000:4000"
-    volumes:
-      - ./:/app/
-    depends_on:
-      - db
-    networks:
-      main:
-        aliases:
-          - app
+#  app:
+#    platform: ${PLATFORM}
+#    container_name: snippetbox
+#    build:
+#      dockerfile: docker/app/Dockerfile
+#      context: .
+#    restart: always
+#    environment:
+#      HOST: ${HOST}
+#      TZ: America/Buenos_Aires
+#    ports:
+#      - "4000:4000"
+#    volumes:
+#      - ./:/app/
+#    depends_on:
+#      - db
+#    networks:
+#      main:
+#        aliases:
+#          - app
 networks:
   main:
 
