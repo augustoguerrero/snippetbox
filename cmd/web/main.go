@@ -29,7 +29,7 @@ type application struct {
 
 func main() {
 	addr := flag.String("addr", ":4000", "HTTP network address")
-	dsn := flag.String("dsn", "web:Jdilla2006@tcp(192.168.1.221:3306)/snippetbox?parseTime=true", "snippetbox mysql ds")
+	dsn := flag.String("dsn", "web:Jdilla2006@tcp(localhost:3306)/snippetbox?parseTime=true", "snippetbox mysql ds")
 	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
 
 	db, err := openDB(*dsn)
@@ -37,7 +37,13 @@ func main() {
 		logger.Error(err.Error())
 		os.Exit(1)
 	}
-	defer db.Close()
+	defer func(db *sql.DB) {
+		err := db.Close()
+		if err != nil {
+			logger.Error(err.Error())
+			os.Exit(1)
+		}
+	}(db)
 
 	templateCache, err := newTemplateCache()
 	if err != nil {
