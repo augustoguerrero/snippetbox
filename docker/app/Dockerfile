@@ -1,5 +1,5 @@
 FROM alpine:latest
 WORKDIR /app
-COPY ./bin/snippetbox /app/
+COPY ./web /app/
 EXPOSE 4000
-CMD ["/app/snippetbox"]
+CMD ["/app/web"]
