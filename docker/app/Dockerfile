@@ -1,5 +1,6 @@
 FROM alpine:latest
 WORKDIR /
-COPY ./web /
+COPY ./web /web
+RUN chmod +x /web
 EXPOSE 4000
-CMD ["./web"]
+CMD ["/web"]
