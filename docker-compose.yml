@@ -1,22 +1,22 @@
 version: "3.9"
 services:
-#  nginx:
-#    platform: ${PLATFORM}
-#    container_name: nginx
-#    build:
-#      context: .
-#      dockerfile: docker/nginx/Dockerfile
-#    restart: always
-#    environment:
-#        HOST: ${HOST}
-#        TZ: America/Buenos_Aires
-#    ports:
-#      - "80:80"
-#      - "443:443"
-#    networks:
-#      main:
-#        aliases:
-#          - nginx
+  nginx:
+    platform: ${PLATFORM}
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    restart: always
+    environment:
+        HOST: ${HOST}
+        TZ: America/Buenos_Aires
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      main:
+        aliases:
+          - nginx
 
   db:
     platform: ${PLATFORM}
@@ -26,7 +26,7 @@ services:
     environment:
       HOST: ${HOST}
       MYSQL_DATABASE: "snippetbox"
-      MYSQL_ROOT_PASSWORD: "Jdilla2006"
+      MYSQL_ROOT_PASSWORD: "xxxxx"
       TZ: America/Buenos_Aires
     ports:
       - "3306:3306"
